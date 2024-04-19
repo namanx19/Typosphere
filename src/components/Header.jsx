@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { images } from "../constants";
@@ -28,7 +29,11 @@ const Header = () => {
     <section>
       <header className="container mx-auto px-5 flex justify-between py-4 items-center">
         <div>
-          <img src={images.Logo} alt="Logo" />
+          <img
+            src={images.Logo}
+            alt="Logo"
+            className="w-24 md:w-32 lg:w-40 xl:w-48 h-auto"
+          />
         </div>
         <div className="flex gap-x-9 items-center">
           <ul className="flex gap-x-2 font-semibold">
