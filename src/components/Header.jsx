@@ -96,7 +96,7 @@ const Header = () => {
               />
             </span>
           </div> */}
-          <h1 className="font-courierprime text-3xl text-dark-hard">
+          <h1 className="font-courierprime text-2xl lg:text-3xl md:text-3xl xl:text-3xl text-dark-hard">
             typosphere.
           </h1>
         </div>
