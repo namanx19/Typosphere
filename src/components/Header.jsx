@@ -115,12 +115,12 @@ const Header = () => {
             navIsVisible ? "right-0" : "-right-full"
           } transition-all duration-300 mt-[68px] lg:mt-0 bg-dark-hard lg:bg-transparent  z-[49] flex flex-col w-full lg:w-auto justify-center lg:justify-end lg:flex-row fixed top-0 bottom-0 lg:static gap-x-9 items-center`}
         >
-          <ul className="text-white font-opensans font-normal text-base items-center gap-y-5 lg:text-dark-soft flex flex-col lg:flex-row gap-x-2 font-semibold">
+          <ul className="text-white font-opensans text-base items-center gap-y-5 lg:text-dark-soft flex flex-col lg:flex-row gap-x-2 font-semibold">
             {NavItemsInfo.map((item) => (
               <NavItem key={item.name} item={item} />
             ))}
           </ul>
-          <button className="font-opensans font-normal text-sm mt-5 lg:mt-0 border-2 border-primary px-6 py-2 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+          <button className="font-opensans text-sm mt-5 lg:mt-0 border-2 border-primary px-6 py-2 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300">
             Sign In
           </button>
         </div>
