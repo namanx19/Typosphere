@@ -1,9 +1,11 @@
 import Logo from "../assets/Logo.png";
-import Icon from "../assets/Favicons/Icon.png";
+import Favicon from "../assets/Favicons/Favicon.png";
+import HeroImage from "../assets/HeroImage.png";
 
 const images = {
   Logo,
-  Icon,
+  Favicon,
+  HeroImage,
 };
 
 export default images;

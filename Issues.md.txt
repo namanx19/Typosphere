@@ -1,0 +1,3 @@
+Issues in this project:
+
+1. Improving the UX of the button inside the search bar.
