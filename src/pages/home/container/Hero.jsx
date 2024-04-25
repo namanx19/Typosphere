@@ -10,7 +10,7 @@ const Hero = () => {
         <h1 className="font-courierprime text-3xl text-center font-bold text-dark-soft md:text-5xl lg:text-4xl xl:text-5xl lg:text-left lg:max-w-[540px]">
           Read the most interesting articles
         </h1>
-        <p className="font-opensans text-dark-light mt-4 text-center md:text-xl lg:text-base xl:text-xl lg:text-left">
+        <p className="text-dark-light mt-4 text-center md:text-xl lg:text-base xl:text-xl lg:text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
           dictum, dolor sed sodales vestibulum, ante elit tempor nulla, et
           faucibus turpis felis a mauris. Duis sodales nisl nec dolor tincidunt.
@@ -20,7 +20,7 @@ const Hero = () => {
           <div className="relative">
             <IoSearchOutline className="absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[#959EAD]" />
             <input
-              className="font-opensans placeholder:font-bold font-semibold text-dark-soft placeholder:text-[#959EAD] placeholder:text-sm md:placeholder:text-base lg:placeholder:text-lg rounded-lg pl-12 pr-3 w-full py-3 focus:outline-none shadow-[0_20px_40px_rgba(8,_112,_184,_0.7)] md:py-4"
+              className="placeholder:font-bold font-semibold text-dark-soft placeholder:text-[#959EAD] placeholder:text-sm md:placeholder:text-base lg:placeholder:text-lg rounded-lg pl-12 pr-3 w-full py-3 focus:outline-none shadow-[0_20px_40px_rgba(8,_112,_184,_0.7)] md:py-4"
               type="text"
               placeholder="Search article"
             />
@@ -31,17 +31,17 @@ const Hero = () => {
         </div>
 
         <div className="flex mt-8 flex-col lg:items-start lg:flex-nowrap lg:gap-x-4 lg:mt-8">
-          <span className="font-opensans text-dark-light font-semibold italic mt-2 lg:mt-4 lg:text-sm xl:text-base">
+          <span className="text-dark-light font-semibold italic mt-2 lg:mt-4 lg:text-sm xl:text-base">
             Popular Tags:
           </span>
           <ul className="flex flex-wrap gap-x-2.5 gap-y-2.5 mt-3 lg:text-sm xl:text-base">
-            <li className="font-opensans rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold">
+            <li className="rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold">
               Design
             </li>
-            <li className="font-opensans rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold">
+            <li className="rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold">
               User Experience
             </li>
-            <li className="font-opensans rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold">
+            <li className="rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold">
               User Interfaces
             </li>
           </ul>

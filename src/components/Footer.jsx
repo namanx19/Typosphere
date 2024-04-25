@@ -83,7 +83,7 @@ const Footer = () => {
           <h1 className="font-courierprime text-2xl lg:text-3xl md:text-3xl xl:text-3xl text-white text-center md:text-left">
             typosphere.
           </h1>
-          <p className="font-opensans text-dark-light text-xs text-center mt-4 md:text-left">
+          <p className="text-dark-light text-xs text-center mt-4 md:text-left">
             Crafting Stories, One Word at a Time
           </p>
           <ul className="flex justify-center items-center mt-5 space-x-4 text-gray-300 md:justify-start">

@@ -20,7 +20,7 @@ const ArticleCard = ({ className }) => {
         <h2 className="font-courierprime font-bold text-xl text-dark-soft md:text-2xl lg:text-[28px]">
           Future of Work
         </h2>
-        <p className="font-opensans text-dark-light mt-3 text-sm md:text-lg">
+        <p className="text-dark-light mt-3 text-sm md:text-lg">
           Majority of people will work in jobs that don't exist today.
         </p>
         <div className="flex justify-between flex-nowrap items-center mt-6">
@@ -31,11 +31,11 @@ const ArticleCard = ({ className }) => {
               className="w-9 h-9 md:w-10 md:h-10"
             />
             <div className="flex flex-col">
-              <h4 className="font-opensans font-bold italic text-dark-soft text-sm md:text-base">
+              <h4 className="font-bold italic text-dark-soft text-sm md:text-base">
                 Viola Manisa
               </h4>
               <div className="flex items-center gap-x-2">
-                <span className="font-opensans italic text-dark-light text-xs md:text-sm">
+                <span className="italic text-dark-light text-xs md:text-sm">
                   Verified Writer
                 </span>
                 <span className="bg-[#36B37E] w-fit bg-opacity-20 p-1.5 rounded-full">
@@ -44,7 +44,7 @@ const ArticleCard = ({ className }) => {
               </div>
             </div>
           </div>
-          <span className="font-opensans font-bold italic text-dark-light text-sm md:text-base">
+          <span className="font-bold italic text-dark-light text-sm md:text-base">
             02 May
           </span>
         </div>
