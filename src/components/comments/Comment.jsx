@@ -15,6 +15,7 @@ const Comment = ({
   addComment,
   parentId = null,
   updateComment,
+  deleteComment,
 }) => {
   const isUserLoggedIn = Boolean(loggedInUserId);
   const commentBelongsToUser = loggedInUserId === comment.user._id;
@@ -83,7 +84,7 @@ const Comment = ({
                 <FiEdit2 className="w-4 h-auto" />
                 <span>Edit</span>
               </button>
-              <button className="flex items-center space-x-2">
+              <button className="flex items-center space-x-2" onClick={() => deleteComment(comment._id)}>
                 <FiTrash className="w-4 h-auto" />
                 <span>Delete</span>
               </button>
