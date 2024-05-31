@@ -33,11 +33,23 @@ const CommentsContainer = ({ className, loggedInUserId }) => {
       post: "1",
       parent: parent,
       replyOnUser: replyOnUser,
-      createdAt: "2022-12-31T17:22:05.092+0000",
+      createdAt: "2024-05-31T17:22:05.092+0000",
     };
     setComments((currState) => {
       return [newComment, ...currState];
     });
+    setAffectedComment(null);
+  };
+
+  const updateCommentHandler = (value, commentId) => {
+    const updatedComments = comments.map((comment) => {
+      if (comment._id === commentId) {
+        return { ...comment, desc: value };
+      }
+      return comment;
+    });
+    setComments(updatedComments);
+    setAffectedComment(null);
   };
 
   return (
@@ -55,6 +67,7 @@ const CommentsContainer = ({ className, loggedInUserId }) => {
             affectedComment={affectedComment}
             setAffectedComment={setAffectedComment}
             addComment={addCommentHandler}
+            updateComment={updateCommentHandler}
           />
         ))}
       </div>
