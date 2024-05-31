@@ -7,6 +7,7 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import SuggestedPosts from "./container/SuggestedPosts";
+import CommentsContainer from "../../components/comments/CommentsContainer";
 
 const breadCrumbsData = [
   { name: "Home", link: "/" },
@@ -68,8 +69,7 @@ const ArticleDetailPage = () => {
           >
             EDUCATION
           </Link>
-          <h1
-            className="text-xl font-medium font-courierprime mt-4 text-dark-hard md:text-[26px]">
+          <h1 className="text-xl font-medium font-courierprime mt-4 text-dark-hard md:text-[26px]">
             Help children get better education
           </h1>
           <div className="mt-4 text-dark-soft">
@@ -95,6 +95,7 @@ const ArticleDetailPage = () => {
               faucibus et molestie ac feugiat sed lectus vestibulum.
             </p>
           </div>
+          <CommentsContainer className="mt-10" loggedInUserId="a" />
         </article>
         <SuggestedPosts
           header="Latest Articles"
