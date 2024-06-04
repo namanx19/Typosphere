@@ -8,6 +8,7 @@ import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import SuggestedPosts from "./container/SuggestedPosts";
 import CommentsContainer from "../../components/comments/CommentsContainer";
+import SocialShareButtons from "../../components/SocialShareButtons";
 
 const breadCrumbsData = [
   { name: "Home", link: "/" },
@@ -97,12 +98,23 @@ const ArticleDetailPage = () => {
           </div>
           <CommentsContainer className="mt-10" loggedInUserId="a" />
         </article>
-        <SuggestedPosts
-          header="Latest Articles"
-          posts={postsData}
-          tags={tagsData}
-          className="mt-8 lg:mt-0 lg:max-w-xs"
-        ></SuggestedPosts>
+        <div>
+          <SuggestedPosts
+            header="Latest Articles"
+            posts={postsData}
+            tags={tagsData}
+            className="mt-8 lg:mt-0 lg:max-w-xs"
+          ></SuggestedPosts>
+          <div className="mt-7">
+            <h2 className="font-courierprime font-medium text-dark-hard mb-4 md:text-xl">
+              Share on:
+            </h2>
+            <SocialShareButtons
+              url={encodeURI("www.google.co.in")}
+              title={encodeURIComponent("Google")}
+            />
+          </div>
+        </div>
       </section>
     </MainLayout>
   );
