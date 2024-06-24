@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainLayout from "../../components/MainLayout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { signup } from "../../services/index/users";
 import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { userActions } from "../../store/reducers/userReducers";
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userState = useSelector((state) => state.user);
+
   const { mutate, isLoading } = useMutation({
     mutationFn: ({ name, email, password }) => {
       return signup({ name, email, password });
     },
     onSuccess: (data) => {
-      console.log(data);
+      dispatch(userActions.setUserInfo(data));
+      localStorage.setItem("account", JSON.stringify(data));
     },
     onError: (error) => {
       toast.error(`Error: ${error.message}`);
       console.log(error);
     },
   });
+
+  useEffect(() => {
+    if (userState.userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userState.userInfo]);
+
   const {
     register,
     handleSubmit,
@@ -33,10 +47,12 @@ const RegisterPage = () => {
     },
     mode: "onChange",
   });
+
   const submitHandler = (data) => {
     const { name, email, password } = data;
     mutate({ name, email, password });
   };
+  
   const password = watch("password");
   return (
     <MainLayout>
