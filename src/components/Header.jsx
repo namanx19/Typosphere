@@ -8,6 +8,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { logout } from "../store/actions/user";
 
 const NavItemsInfo = [
@@ -73,6 +74,7 @@ const NavItem = ({ item }) => {
 
 const Header = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [navIsVisible, setNavIsVisible] = useState(false);
   const userState = useSelector((state) => state.user);
   const [profileDropdown, setProfileDropdown] = useState(false);
@@ -167,7 +169,7 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <button className="text-sm mt-5 lg:mt-0 border-2 border-primary px-6 py-2 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+            <button onClick={() => navigate("/login")} className="text-sm mt-5 lg:mt-0 border-2 border-primary px-6 py-2 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300">
               Sign In
             </button>
           )}
