@@ -141,7 +141,7 @@ const Header = () => {
                     className="flex gap-x-1 items-center text-sm mt-5 lg:mt-0 border-2 border-primary px-6 py-2 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300"
                     onClick={() => setProfileDropdown(!profileDropdown)}
                   >
-                    <span>Profile</span>
+                    <span>Account</span>
                     <RiArrowDropDownLine />
                   </button>
                   <div
@@ -151,10 +151,11 @@ const Header = () => {
                   >
                     <ul className="bg-dark-hard lg:bg-transparent flex flex-col shadow-lg rounded-lg overflow-hidden">
                       <button
+                        onClick={() => navigate("/profile")}
                         type="button"
                         className="lg:hover:bg-dark-hard hover:bg-dark-soft hover:text-white px-4 py-2 text-white lg:text-dark-soft"
                       >
-                        Dashboard
+                        Profile Page
                       </button>
                       <button
                         onClick={logoutHandler}
@@ -169,7 +170,10 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <button onClick={() => navigate("/login")} className="text-sm mt-5 lg:mt-0 border-2 border-primary px-6 py-2 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+            <button
+              onClick={() => navigate("/login")}
+              className="text-sm mt-5 lg:mt-0 border-2 border-primary px-6 py-2 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+            >
               Sign In
             </button>
           )}
