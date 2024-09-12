@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
-import { createPost, updatePost, deletePost } from "../controllers/postControllers";
-import { authGuard, adminGuard } from "../middleware/authMiddleware";
+import { createPost, updatePost, deletePost } from "../controllers/postControllers.js";
+import { authGuard, adminGuard } from "../middleware/authMiddleware.js";
 
 router.post("/", authGuard, adminGuard, createPost);
 router
