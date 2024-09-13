@@ -4,11 +4,12 @@ import {
   createPost,
   updatePost,
   getPost,
+  getAllPosts,
   deletePost,
 } from "../controllers/postControllers.js";
 import { authGuard, adminGuard } from "../middleware/authMiddleware.js";
 
-router.post("/", authGuard, adminGuard, createPost);
+router.post("/", authGuard, adminGuard, createPost).getAllPosts();
 router
   .route("/:slug")
   .put(authGuard, adminGuard, updatePost)
