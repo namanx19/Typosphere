@@ -1,39 +1,42 @@
 import User from "../models/User.js";
 import { uploadPicture } from "../middleware/uploadPictureMiddleware.js";
 import { fileRemover } from "../utils/fileRemover.js";
+import axios from "axios";
+import dotenv from "dotenv";
 
+dotenv.config();
 // User Register Handler
-export const registerUser = async (req, res, next) => {
-  try {
-    const { name, email, password } = req.body;
-
-    // Check whether the user exists or not
-    let user = await User.findOne({ email });
-
-    if (user) {
-      throw new Error("User have already registered");
-    }
-
-    // Creating a new user
-    user = await User.create({
-      name,
-      email,
-      password,
-    });
-
-    return res.status(201).json({
-      _id: user._id,
-      avatar: user.avatar,
-      name: user.name,
-      email: user.email,
-      verified: user.verified,
-      admin: user.admin,
-      token: await user.generateJWT(),
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+// export const registerUser = async (req, res, next) => {
+//   try {
+//     const { name, email, password } = req.body;
+//
+//     // Check whether the user exists or not
+//     let user = await User.findOne({ email });
+//
+//     if (user) {
+//       throw new Error("User have already registered");
+//     }
+//
+//     // Creating a new user
+//     user = await User.create({
+//       name,
+//       email,
+//       password,
+//     });
+//
+//     return res.status(201).json({
+//       _id: user._id,
+//       avatar: user.avatar,
+//       name: user.name,
+//       email: user.email,
+//       verified: user.verified,
+//       admin: user.admin,
+//       token: await user.generateJWT(),
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 // User Login Handler
 export const loginUser = async (req, res, next) => {
@@ -63,7 +66,71 @@ export const loginUser = async (req, res, next) => {
     next(error);
   }
 };
+export const registerUser = async (req, res, next) => {
+  try {
+    const { token } = req.body;
 
+    if (!token) {
+      return res.status(400).json({ error: "Token is required" });
+    }
+
+    const params = new URLSearchParams();
+    params.append("token", token);
+    params.append("client_id", process.env.CLIENT_ID);
+    params.append("client_secret", process.env.CLIENT_SECRET);
+
+    const response = await axios.post(
+      "https://auth.otpless.app/auth/userInfo",
+      params.toString(),
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      }
+    );
+
+    const { data } = response;
+    if (data && data.name && data.email) {
+      const name = data.name;
+      const email = data.email;
+      const password = "12345678";
+      let user = await User.findOne({ email });
+
+      if (user) {
+        return res.status(409).json({
+          message: "User already exists",
+          exists: true,
+        });
+      }
+
+      // Creating a new user
+      user = await User.create({
+        name,
+        email,
+        password,
+      });
+
+      return res.status(201).json({
+        _id: user._id,
+        exists: false,
+        avatar: user.avatar,
+        name: user.name,
+        email: user.email,
+        verified: user.verified,
+        admin: user.admin,
+        token: await user.generateJWT(),
+      });
+    } else {
+      return res.status(401).json({ error: "Invalid token or user not found" });
+    }
+  } catch (error) {
+    console.error(
+      "Error during Otpless authentication:",
+      error.response ? error.response.data : error.message
+    );
+    next(error);
+  }
+};
 // User Profile Handler
 export const userProfile = async (req, res, next) => {
   try {
@@ -127,7 +194,9 @@ export const updateProfilePicture = async (req, res, next) => {
 
     upload(req, res, async function (err) {
       if (err) {
-        const error = new Error("An unknown error occured while uploading - " + err.message);
+        const error = new Error(
+          "An unknown error occured while uploading - " + err.message
+        );
         next(error);
       } else {
         // if everything went well
