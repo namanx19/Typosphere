@@ -9,9 +9,9 @@ const PostSchema = new Schema(
     photo: { type: String, required: false },
     user: { type: Schema.Types.ObjectId, ref: "User" },
     tags: { type: [String] },
-    categories: { type: Schema.Types.ObjectId, ref: "PostCategories"},
+    categories: { type: Schema.Types.ObjectId, ref: "PostCategories" },
   },
-  { timestamps: true }
+  { timestamps: true, toJSON: { virtuals: true } }
 );
 
 PostSchema.virtual("comments", {
