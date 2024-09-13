@@ -24,7 +24,6 @@ const RegisterPage = () => {
       return signup({ token });
     },
     onSuccess: (data) => {
-      toast.success("User registered successfully");
       dispatch(userActions.setUserInfo(data));
       localStorage.setItem("account", JSON.stringify(data));
     },
