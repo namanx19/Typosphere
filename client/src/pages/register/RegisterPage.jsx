@@ -7,6 +7,7 @@ import { signup } from "../../services/index/users";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/reducers/userReducers";
+import { Helmet } from "react-helmet";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -48,9 +49,19 @@ const RegisterPage = () => {
   }, [navigate, userState.userInfo]);
 
   return (
-    <div className="h-screen flex items-center justify-center">
-      <div id="otpless-login-page"></div>
-    </div>
+    <MainLayout>
+      <Helmet>
+        <script
+          id="otpless-sdk"
+          type="text/javascript"
+          src="https://otpless.com/v2/auth.js"
+          data-appid="QCSEGVYXV7DFFBYPT7AG"
+        ></script>
+      </Helmet>
+      <div className="h-screen flex items-center justify-center">
+        <div id="otpless-login-page"></div>
+      </div>
+    </MainLayout>
   );
 };
 
