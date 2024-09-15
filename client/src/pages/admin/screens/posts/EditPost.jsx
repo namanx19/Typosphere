@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ArticleDetailSkeleton from "../../../articleDetail/components/ArticleDetailSkeleton";
 import ErrorMessage from "../../../../components/ErrorMessage";
-import parseJsonToHtml from "../../../../utils/parseJsonToHtml.js";
 import { stables } from "../../../../constants";
 import { HiOutlineCamera } from "react-icons/hi";
 import { toast } from "react-hot-toast";
@@ -138,13 +137,13 @@ const EditPost = () => {
               {data?.categories.map((category) => (
                 <Link
                   to={`/blog?category=${category.name}`}
-                  className="text-primary text-sm font-roboto inline-block md:text-base"
+                  className="text-primary text-sm font-courierprime inline-block md:text-base"
                 >
                   {category.name}
                 </Link>
               ))}
             </div>
-            <h1 className="text-xl font-medium font-roboto mt-4 text-dark-hard md:text-[26px]">
+            <h1 className="text-xl font-medium font-courierprime mt-4 text-dark-hard md:text-[26px]">
               {data?.title}
             </h1>
             <div className="w-full my-8 border-2 rounded-lg p-4">

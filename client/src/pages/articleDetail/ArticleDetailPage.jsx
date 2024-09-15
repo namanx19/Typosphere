@@ -65,7 +65,7 @@ const ArticleDetailPage = () => {
               {data?.categories.map((category) => (
                 <Link
                   to={`/blog?category=${category.name}`}
-                  className="text-primary text-sm font-roboto inline-block md:text-base"
+                  className="text-primary text-sm font-courierprime inline-block md:text-base"
                 >
                   {category.name}
                 </Link>
