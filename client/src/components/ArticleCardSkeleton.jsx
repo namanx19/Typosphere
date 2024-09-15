@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const ArticleCardSkeleton = ({ className }) => {
   return (
     <div

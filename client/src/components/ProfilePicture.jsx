@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import { stables } from "../constants";
 import { HiOutlineCamera } from "react-icons/hi";
 import { createPortal } from "react-dom";
