@@ -19,47 +19,10 @@ import SuggestedPosts from "./container/SuggestedPosts";
 import CommentsContainer from "../../components/comments/CommentsContainer";
 import SocialShareButtons from "../../components/SocialShareButtons";
 import { useQuery } from "@tanstack/react-query";
-import { getSinglePost } from "../../services/index/posts";
+import { getSinglePost, getAllPosts } from "../../services/index/posts";
 import ArticleDetailSkeleton from "./components/ArticleDetailSkeleton";
 import ErrorMessage from "../../components/ErrorMessage";
 import { useSelector } from "react-redux";
-
-const postsData = [
-  {
-    _id: "1",
-    image: images.Post1Image,
-    title: "Help children get better education",
-    createdAt: "2024-04-26T02:19:53.607+0000",
-  },
-  {
-    _id: "2",
-    image: images.Post1Image,
-    title: "Help children get better education",
-    createdAt: "2024-04-26T02:19:53.607+0000",
-  },
-  {
-    _id: "3",
-    image: images.Post1Image,
-    title: "Help children get better education",
-    createdAt: "2024-04-26T02:19:53.607+0000",
-  },
-  {
-    _id: "4",
-    image: images.Post1Image,
-    title: "Help children get better education",
-    createdAt: "2024-04-26T02:19:53.607+0000",
-  },
-];
-
-const tagsData = [
-  "Medical",
-  "Lifestyle",
-  "Learn",
-  "Healthy",
-  "Food",
-  "Diet",
-  "Education",
-];
 
 const ArticleDetailPage = () => {
   const { slug } = useParams();
@@ -91,7 +54,10 @@ const ArticleDetailPage = () => {
       }),
   });
 
-  console.log(data);
+  const { data: postsData } = useQuery({
+    queryFn: () => getAllPosts(),
+    queryKey: ["posts"],
+  });
 
   return (
     <MainLayout>
@@ -137,7 +103,7 @@ const ArticleDetailPage = () => {
             <SuggestedPosts
               header="Latest Articles"
               posts={postsData}
-              tags={tagsData}
+              tags={data?.tags}
               className="mt-8 lg:mt-0 lg:max-w-xs"
             ></SuggestedPosts>
             <div className="mt-7">
@@ -145,8 +111,8 @@ const ArticleDetailPage = () => {
                 Share on:
               </h2>
               <SocialShareButtons
-                url={encodeURI("www.google.co.in")}
-                title={encodeURIComponent("Google")}
+                url={encodeURI(window.location.href)}
+                title={encodeURIComponent(data?.title)}
               />
             </div>
           </div>
