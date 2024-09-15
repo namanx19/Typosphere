@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainLayout from "../../components/MainLayout";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import { images, stables } from "../../constants";
@@ -36,6 +36,10 @@ const ArticleDetailPage = () => {
         return res;
       }),
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const { data: postsData } = useQuery({
     queryFn: () => getAllPosts(),
