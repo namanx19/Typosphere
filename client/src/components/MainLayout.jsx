@@ -6,9 +6,9 @@ import Footer from "./Footer";
 
 const MainLayout = ({ children }) => {
   return (
-    <div>
+    <div className="flex flex-col h-[100vh]">
       <Header />
-      {children}
+      <div className="flex-1">{children}</div>
       <Footer />
     </div>
   );
