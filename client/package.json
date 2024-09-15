@@ -20,6 +20,8 @@
     "@tiptap/pm": "^2.6.6",
     "@tiptap/react": "^2.6.6",
     "@tiptap/starter-kit": "^2.6.6",
+    "@tiptap/extension-dropcursor": "^2.1.6",
+    "@tiptap/extension-image": "^2.1.6",
     "@uidotdev/usehooks": "^2.4.1",
     "axios": "^1.7.2",
     "cors": "^2.8.5",
