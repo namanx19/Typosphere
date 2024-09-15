@@ -5,15 +5,7 @@
 import React, { useState } from "react";
 import MainLayout from "../../components/MainLayout";
 import BreadCrumbs from "../../components/BreadCrumbs";
-import { generateHTML } from "@tiptap/html";
-import Bold from "@tiptap/extension-bold";
-import Document from "@tiptap/extension-document";
-import Paragraph from "@tiptap/extension-paragraph";
-import Text from "@tiptap/extension-text";
-import Heading from "@tiptap/extension-heading";
-import Italic from "@tiptap/extension-italic";
-import parse from "html-react-parser";
-import { images } from "../../constants";
+import { images, stables } from "../../constants";
 import { Link, useParams } from "react-router-dom";
 import SuggestedPosts from "./container/SuggestedPosts";
 import CommentsContainer from "../../components/comments/CommentsContainer";
@@ -23,6 +15,7 @@ import { getSinglePost, getAllPosts } from "../../services/index/posts";
 import ArticleDetailSkeleton from "./components/ArticleDetailSkeleton";
 import ErrorMessage from "../../components/ErrorMessage";
 import { useSelector } from "react-redux";
+import parseJsonToHtml from "../../utils/parseJsonToHtml";
 
 const ArticleDetailPage = () => {
   const { slug } = useParams();
@@ -38,18 +31,7 @@ const ArticleDetailPage = () => {
           { name: "Blog", link: "/blog" },
           { name: `${res.title}`, link: `/blog/${res.slug}` },
         ]);
-        setBody(
-          parse(
-            generateHTML(res.body, [
-              Bold,
-              Document,
-              Paragraph,
-              Text,
-              Heading,
-              Italic,
-            ])
-          )
-        );
+        setBody(parseJsonToHtml(res.body));
         return res;
       }),
   });

@@ -157,9 +157,9 @@ const ManagePosts = () => {
                               <a href="/" className="relative block">
                                 <img
                                   src={
-                                    post?.image
+                                    post?.photo
                                       ? stables.UPLOAD_FOLDER_BASE_URL +
-                                        post?.image
+                                        post?.photo
                                       : images.samplePostImage
                                   }
                                   alt={post.title}
@@ -220,7 +220,7 @@ const ManagePosts = () => {
                             Delete
                           </button>
                           <Link
-                            to="/"
+                            to={`/admin/posts/manage/edit/${post?.slug}`}
                             className="text-green-600 hover:text-green-900"
                           >
                             Edit
