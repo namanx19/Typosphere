@@ -10,7 +10,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { createPost } from "../../../../services/index/posts.js";
-import { FaComments } from "react-icons/fa6";
+import { FaComments, FaUser } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
 
 const Header = () => {
@@ -108,6 +108,14 @@ const Header = () => {
                 link="/admin/comments"
                 icon={<FaComments className="text-xl" />}
                 name="comments"
+                activeNavName={activeNavName}
+                setActiveNavName={setActiveNavName}
+              />
+              <NavItem
+                title="Users"
+                link="/admin/users/manage"
+                icon={<FaUser className="text-xl" />}
+                name="users"
                 activeNavName={activeNavName}
                 setActiveNavName={setActiveNavName}
               />
