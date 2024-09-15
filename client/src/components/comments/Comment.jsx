@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { images } from "../../constants";
+import { images, stables } from "../../constants";
 import { FiMessageSquare } from "react-icons/fi";
 import { FiEdit2 } from "react-icons/fi";
 import { FiTrash } from "react-icons/fi";
@@ -16,7 +16,7 @@ const Comment = ({
   parentId = null,
   updateComment,
   deleteComment,
-  replies
+  replies,
 }) => {
   const isUserLoggedIn = Boolean(loggedInUserId);
   const commentBelongsToUser = loggedInUserId === comment.user._id;
@@ -33,7 +33,11 @@ const Comment = ({
   return (
     <div className="flex flex-nowrap items-start gap-x-3 bg-[#F2F4F5] p-3 rounded-lg">
       <img
-        src={images.PostProfile1}
+        src={
+          comment?.user?.avatar
+            ? stables.UPLOAD_FOLDER_BASE_URL + comment.user.avatar
+            : images.userImage
+        }
         alt="user profile image"
         className="w-9 h-9 object-cover rounded-lg"
       />
@@ -85,7 +89,10 @@ const Comment = ({
                 <FiEdit2 className="w-4 h-auto" />
                 <span>Edit</span>
               </button>
-              <button className="flex items-center space-x-2" onClick={() => deleteComment(comment._id)}>
+              <button
+                className="flex items-center space-x-2"
+                onClick={() => deleteComment(comment._id)}
+              >
                 <FiTrash className="w-4 h-auto" />
                 <span>Delete</span>
               </button>
@@ -104,10 +111,21 @@ const Comment = ({
         {replies.length > 0 && (
           <div>
             {replies.map((reply) => (
-              <Comment key={reply._id} addComment={addComment} affectedComment={affectedComment} setAffectedComment={setAffectedComment} comment={reply} deleteComment={deleteComment} loggedInUserId={loggedInUserId} replies={[]} updateComment={updateComment} parentId={comment._id}/>
+              <Comment
+                key={reply._id}
+                addComment={addComment}
+                affectedComment={affectedComment}
+                setAffectedComment={setAffectedComment}
+                comment={reply}
+                deleteComment={deleteComment}
+                loggedInUserId={loggedInUserId}
+                replies={[]}
+                updateComment={updateComment}
+                parentId={comment._id}
+              />
             ))}
           </div>
-        )} 
+        )}
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getSinglePost } from "../../services/index/posts";
 import ArticleDetailSkeleton from "./components/ArticleDetailSkeleton";
 import ErrorMessage from "../../components/ErrorMessage";
+import { useSelector } from "react-redux";
 
 const postsData = [
   {
@@ -62,6 +63,7 @@ const tagsData = [
 
 const ArticleDetailPage = () => {
   const { slug } = useParams();
+  const userState = useSelector((state) => state.user);
   const [breadcrumbsData, setBreadCrumbsData] = useState([]);
   const [body, setBody] = useState(null);
   const { data, isLoading, isError } = useQuery({
@@ -122,7 +124,11 @@ const ArticleDetailPage = () => {
               {data?.title}
             </h1>
             <div className="mt-4 prose prose-sm sm:prose-base">{body}</div>
-            <CommentsContainer className="mt-10" loggedInUserId="a" />
+            <CommentsContainer
+              comments={data?.comments}
+              className="mt-10"
+              logginedUserId={userState?.userInfo?._id}
+            />
           </article>
           <div>
             <SuggestedPosts
