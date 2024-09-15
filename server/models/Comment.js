@@ -15,7 +15,7 @@ const CommentSchema = new Schema(
 CommentSchema.virtual("replies", {
   ref: "Comment",
   localField: "_id",
-  foreignField: "postId",
+  foreignField: "parent",
 });
 
 const Comment = model("Comment", CommentSchema);

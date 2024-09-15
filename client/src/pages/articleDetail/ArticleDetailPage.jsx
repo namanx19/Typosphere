@@ -91,6 +91,8 @@ const ArticleDetailPage = () => {
       }),
   });
 
+  console.log(data);
+
   return (
     <MainLayout>
       {isLoading ? (
@@ -127,7 +129,7 @@ const ArticleDetailPage = () => {
             <CommentsContainer
               comments={data?.comments}
               className="mt-10"
-              logginedUserId={userState?.userInfo?._id}
+              loggedInUserId={userState?.userInfo?._id}
               postSlug={slug}
             />
           </article>
