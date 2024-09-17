@@ -16,15 +16,15 @@ const __dirname = dirname(__filename);
 
 // Routes
 import userRoutes from "./routes/userRoutes.js";
-import postRoutes from "./routes/postRoutes.js"
-import commentRoutes from "./routes/commentRoutes.js"
-import postCategoriesRoutes from "./routes/postCategoriesRoutes.js"
+import postRoutes from "./routes/postRoutes.js";
+import commentRoutes from "./routes/commentRoutes.js";
+import postCategoriesRoutes from "./routes/postCategoriesRoutes.js";
 
 dotenv.config();
 connectDB();
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 app.get("/", (req, res) => {
   res.send("Server is running...");
