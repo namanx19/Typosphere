@@ -62,36 +62,36 @@ To set up the project locally, follow these steps:
 ## Screenshots
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/99c1939e-e3c4-46e2-b166-43208519cde7" alt="1 homepage" width="300" height="auto"></td>
-    <td><img src="https://github.com/user-attachments/assets/f75f7ac1-7e31-41c8-a378-95d98b12bfed" alt="2 otplesssignin" width="300" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/99c1939e-e3c4-46e2-b166-43208519cde7" alt="1 homepage" width="450" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/f75f7ac1-7e31-41c8-a378-95d98b12bfed" alt="2 otplesssignin" width="450" height="auto"></td>
   </tr>
 
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/affef9e2-775e-49b7-89b9-b59f4aeae978" alt="4 articledetail" width="300" height="auto"></td>
-    <td><img src="https://github.com/user-attachments/assets/c68e734d-b2d5-4998-b215-69cd4ab7b226" alt="5 allblogs" width="300" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/affef9e2-775e-49b7-89b9-b59f4aeae978" alt="4 articledetail" width="450" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/c68e734d-b2d5-4998-b215-69cd4ab7b226" alt="5 allblogs" width="450" height="auto"></td>
   </tr>
 
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/762c1872-499e-4fc7-9e09-4e6d3dd5fd99" alt="6 profilepage" width="300" height="auto"></td>
-    <td><img src="https://github.com/user-attachments/assets/1c7ee6ef-b822-481c-b20a-4a2019dfba38" alt="7 crop picture" width="300" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/762c1872-499e-4fc7-9e09-4e6d3dd5fd99" alt="6 profilepage" width="450" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/1c7ee6ef-b822-481c-b20a-4a2019dfba38" alt="7 crop picture" width="450" height="auto"></td>
   </tr>
 
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/e9555387-0455-4eb5-ba50-1a41cafd07ad" alt="8 create post" width="300" height="auto"></td>
-    <td><img src="https://github.com/user-attachments/assets/658f44de-c28a-461f-b03a-dd8c2f8bdfb3" alt="8 profile3" width="300" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/1d317de7-5f75-43dd-82e0-8fc056f0fa0b" alt="8 create post" width="450" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/658f44de-c28a-461f-b03a-dd8c2f8bdfb3" alt="8 profile3" width="450" height="auto"></td>
   </tr>
 
 
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/84acdb40-3616-4e42-898f-9a0ea9f22074" alt="10 admin comments" width="300" height="auto"></td>
-    <td><img src="https://github.com/user-attachments/assets/a04887ff-a272-49b4-ade4-c7ca3df48150" alt="11 admin category" width="300" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/84acdb40-3616-4e42-898f-9a0ea9f22074" alt="10 admin comments" width="450" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/a04887ff-a272-49b4-ade4-c7ca3df48150" alt="11 admin category" width="450" height="auto"></td>
   </tr>
 
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/f56f90a0-0922-418b-afbc-db5f8bac5564" alt="13 razorpay" width="300" height="auto"></td>
-    <td><img src="https://github.com/user-attachments/assets/c847a6b8-9faf-4a1d-abec-f528bd06f8d5" alt="14 razorpay payment screens" width="300" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/f56f90a0-0922-418b-afbc-db5f8bac5564" alt="13 admin users" width="450" height="auto"></td>
   </tr>
 </table>
+
 
 ### Questions or Issues?
 Feel free to reach out to ```naman.mw4@gmail.com``` if you have any questions or encounter any issues while setting up or using Typosphere. Happy coding!
