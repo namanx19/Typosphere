@@ -12,13 +12,14 @@ import { useSelector } from "react-redux";
 import { createPost } from "../../../../services/index/posts.js";
 import { FaComments, FaUser } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
+import { TbCategoryFilled } from "react-icons/tb";
 
 const Header = () => {
   const navigate = useNavigate();
   const userState = useSelector((state) => state.user);
   const queryClient = useQueryClient();
   const [isMenuActive, setIsMenuActive] = useState(false);
-  const [activeNavName, setActiveNavName] = useState("dashboard");
+  const [activeNavName, setActiveNavName] = useState("comments");
   const windowSize = useWindowSize();
 
   const { mutate: mutateCreatePost, isLoading: isLoadingCreatePost } =
@@ -95,14 +96,14 @@ const Header = () => {
             {/* <h4 className="mt-10 font-bold text-[#C7C7C7]">MAIN MENU</h4> */}
             {/* menu items */}
             <div className="mt-6 flex flex-col gap-y-[0.563rem]">
-              <NavItem
+              {/* <NavItem
                 title="Dashboard"
                 link="/admin"
                 icon={<AiFillDashboard className="text-xl" />}
                 name="dashboard"
                 activeNavName={activeNavName}
                 setActiveNavName={setActiveNavName}
-              />
+              /> */}
               <NavItem
                 title="Comments"
                 link="/admin/comments"
@@ -114,7 +115,7 @@ const Header = () => {
               <NavItem
                 title="Categories"
                 link="/admin/categories/manage"
-                icon={<FaComments className="text-xl" />}
+                icon={<TbCategoryFilled className="text-xl" />}
                 name="categories"
                 activeNavName={activeNavName}
                 setActiveNavName={setActiveNavName}

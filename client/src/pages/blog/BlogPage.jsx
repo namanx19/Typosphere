@@ -81,11 +81,11 @@ const BlogPage = () => {
             ))
           )}
         </div>
-        {!isLoading && (
+        {!isLoading && data?.headers?.["x-totalpagecount"] && (
           <Pagination
             onPageChange={(page) => handlePageChange(page)}
             currentPage={currentPage}
-            totalPageCount={JSON.parse(data?.headers?.["x-totalpagecount"])}
+            totalPageCount={parseInt(data.headers["x-totalpagecount"]) || 1}
           />
         )}
       </section>

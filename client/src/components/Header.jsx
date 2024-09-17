@@ -161,7 +161,7 @@ const Header = () => {
                     <ul className="bg-dark-hard lg:bg-transparent flex flex-col shadow-lg rounded-lg overflow-hidden">
                       {userState?.userInfo?.admin && (
                         <button
-                          onClick={() => navigate("/admin")}
+                          onClick={() => navigate("/admin/comments")}
                           type="button"
                           className="hover:bg-dark-hard hover:text-white px-4 py-2 text-white lg:text-dark-soft"
                         >
