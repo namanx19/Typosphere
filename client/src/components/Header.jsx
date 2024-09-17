@@ -158,7 +158,7 @@ const Header = () => {
                       profileDropdown ? "block" : "hidden"
                     } lg:hidden transition-all duration-500 pt-4 lg:absolute lg:bottom-0 lg:right-0 lg:transform lg:translate-y-full group-hover:block w-max`}
                   >
-                    <ul className="bg-dark-hard lg:bg-transparent flex flex-col shadow-lg rounded-lg overflow-hidden">
+                    <ul className="bg-dark-hard lg:bg-white flex flex-col shadow-lg rounded-lg overflow-hidden">
                       {userState?.userInfo?.admin && (
                         <button
                           onClick={() => navigate("/admin/comments")}
