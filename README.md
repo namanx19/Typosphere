@@ -19,7 +19,8 @@ This project is a Vite+React application developed as a personal project, which 
 13. Built a dedicated backend server using Node.js and Express with RESTful routes for handling posts, comments, categories, and user management.
 14. Database management handled using MongoDB, ensuring scalability and flexibility for managing data.
 15. Code available on [GitHub](https://github.com/namanx19/Typosphere).
-16. Website deployed on Vercel. [Link](https://typosphere-ten.vercel.app/)
+16. Website deployed on Vercel. [Link](https://typosphere-one.vercel.app/).
+17. Backend deployed on Digital Ocean.
 
 ## Setup Instructions
 To set up the project locally, follow these steps:
@@ -33,25 +34,29 @@ To set up the project locally, follow these steps:
 
 4. Install dependencies: `npm install`
    
-5. Add a `.env` file with the following details:
+5. Add a `.env` file inside /client with the following details:
+   
 `VITE_BASE_URL = <SERVER_URL>` Default Local Host Server URL is `http://localhost:5000`
 
-6. Start the frontend client: `npm run dev`
+7. Start the frontend client: `npm run dev`
    
-7. On your browser, go to `http://localhost:5173` (if your port is 5173)
+8. On your browser, go to `http://localhost:5173` (if your port is 5173)
 
-8. Navigate to the server directory to run the backend `cd server/`
+9. Navigate to the server directory to run the backend `cd server/`
    
-9. Install dependencies: `npm install`
+10. Install dependencies: `npm install`
     
-10. Add a `.env` file with the following details:
-`PORT = <PORT_NUMBER>
-DB_URI = <MONGO_DB_URI>
-JWT_SECRET = <SECRET>
-NODE_ENV = development
-CLIENT_SECRET = <OTPLESS_CLIENT_SECRET>
-CLIENT_ID = <OTPLESS_CLIENT_ID>
-`
+11. Add a `.env` file inside /server with the following details:
+
+| Key             | Value                  |
+|-----------------|------------------------|
+| PORT            | `<PORT_NUMBER>`         |
+| DB_URI          | `<MONGO_DB_URI>`        |
+| JWT_SECRET      | `<SECRET>`              |
+| NODE_ENV        | development             |
+| CLIENT_SECRET   | `<OTPLESS_CLIENT_SECRET>`|
+| CLIENT_ID       | `<OTPLESS_CLIENT_ID>`   |
+
 11. Admin Panel is only accessible when you mark the user admin = true in mongo db.
 
 ## Screenshots
