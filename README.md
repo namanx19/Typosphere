@@ -62,7 +62,7 @@ To set up the project locally, follow these steps:
 ## Screenshots
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/99c1939e-e3c4-46e2-b166-43208519cde7" alt="1 homepage" width="450" height="auto"></td>
+    <td><img src="https://github.com/user-attachments/assets/b935cca6-e03f-4214-922c-cf60ca8b3c30" alt="1 homepage" width="450" height="auto"></td>
     <td><img src="https://github.com/user-attachments/assets/f75f7ac1-7e31-41c8-a378-95d98b12bfed" alt="2 otplesssignin" width="450" height="auto"></td>
   </tr>
 
