@@ -26,7 +26,7 @@ const app = express();
 app.use(express.json());
 
 // Allow requests from your Vercel app
-const allowedOrigins = ["https://typosphere-one.vercel.app/"]; 
+const allowedOrigins = ["https://typosphere-one.vercel.app"]; 
 
 const corsOptions = {
   origin: allowedOrigins,
