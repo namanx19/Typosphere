@@ -24,7 +24,18 @@ dotenv.config();
 connectDB();
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+
+// Allow requests from your Vercel app
+const allowedOrigins = ["https://typosphere-one.vercel.app/"]; 
+
+const corsOptions = {
+  origin: allowedOrigins,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, 
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Server is running...");
